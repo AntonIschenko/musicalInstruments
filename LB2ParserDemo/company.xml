@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<computerStore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="company.xsd">
+<company id="1">
+	<name>Samsung</name>
+	<country>Korean</country>
+	<email>samsung@gmail.com</email>
+</company>
+	<company id="2">
+	<name>Xiaomi</name>
+	<country>China</country>
+	<email>xiaomi@gmail.com</email>
+</company>
+	<company id="3">
+	<name>Hewlett-Packard</name>
+	<country>USA</country>
+	<email>hp@gmail.com</email>
+</company>
+</computerStore>

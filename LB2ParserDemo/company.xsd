@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="computerStore">
+		<xs:complexType>
+			<xsd:sequence>
+				<xs:element name="company" type="company" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="company">
+        <xs:complexContent>
+            <xs:extension base="Entity">
+                <xs:sequence>
+                    <xs:element name="name" type="tname"/>
+                    <xs:element name="country" type="tcountry"/>
+                    <xs:element name="email" type="temail"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+	<xs:complexType name="Entity" abstract="true">
+		<xs:attribute name="id" type="entity_id" use="required"/>
+	</xs:complexType>
+
+    <xs:simpleType name="tname">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="3"/>
+            <xs:whiteSpace value="preserve"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+	
+
+
+	<xs:simpleType name="tcountry">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Korean"/>
+            <xs:enumeration value="China"/>
+            <xs:enumeration value="USA"/>
+        </xs:restriction>
+    </xs:simpleType>
+	
+    <xs:simpleType name="temail">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="3"/>
+            <xs:whiteSpace value="preserve"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="entity_id">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxExclusive value="999999"/>
+            <xs:pattern value="[0-9]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
